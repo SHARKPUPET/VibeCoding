@@ -49,4 +49,37 @@ document.addEventListener('DOMContentLoaded',()=>{
       if(window.innerWidth <= 760 && navList) navList.style.display = 'none';
     });
   });
+
+  // Parallax scroll effect on cards
+  window.addEventListener('scroll',()=>{
+    const scrolled = window.pageYOffset;
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, idx)=>{
+      const rect = card.getBoundingClientRect();
+      const offset = scrolled * 0.3 + idx * 5;
+      card.style.setProperty('--scroll-offset', offset + 'px');
+    });
+  });
+
+  // List all content dynamically
+  const displayContent = () => {
+    const sections = document.querySelectorAll('section[id]');
+    console.log('📋 Page Content Overview:');
+    sections.forEach(section => {
+      const title = section.querySelector('h2')?.textContent || 'Untitled';
+      const items = section.querySelectorAll('.item, .chip, .link-card');
+      console.log(`\n${title.toUpperCase()}:`);
+      items.forEach(item => {
+        const content = item.textContent.trim();
+        console.log(`  ✓ ${content}`);
+      });
+    });
+  };
+
+  displayContent();
+
+  // Set nav list indices for staggered animation
+  document.querySelectorAll('.nav-list li').forEach((li, idx) => {
+    li.style.setProperty('--index', idx);
+  });
 });
