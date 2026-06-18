@@ -64,16 +64,43 @@ document.addEventListener('DOMContentLoaded',()=>{
   // List all content dynamically
   const displayContent = () => {
     const sections = document.querySelectorAll('section[id]');
-    console.log('📋 Page Content Overview:');
-    sections.forEach(section => {
+    console.log('%c📋 PAGE CONTENT OVERVIEW', 'color: #7c5cf0; font-size: 16px; font-weight: bold;');
+    console.log('%c========================================', 'color: #38bdf8; font-size: 12px;');
+    
+    sections.forEach((section, idx) => {
       const title = section.querySelector('h2')?.textContent || 'Untitled';
-      const items = section.querySelectorAll('.item, .chip, .link-card');
-      console.log(`\n${title.toUpperCase()}:`);
-      items.forEach(item => {
-        const content = item.textContent.trim();
-        console.log(`  ✓ ${content}`);
-      });
+      const items = section.querySelectorAll('.item, .chip, .link-card, .exp-item, .project-card, .achievement, .testimonial, .education-item');
+      
+      console.log(`\n%c${title.toUpperCase()}`, 'color: #38bdf8; font-weight: bold; font-size: 13px;');
+      
+      if(items.length > 0) {
+        items.forEach((item, itemIdx) => {
+          let content = '';
+          if(item.classList.contains('item') || item.classList.contains('chip') || item.classList.contains('link-card')) {
+            content = item.textContent.trim();
+          } else if(item.classList.contains('exp-item')) {
+            const h3 = item.querySelector('h3')?.textContent;
+            const date = item.querySelector('.exp-date')?.textContent;
+            content = `${h3} (${date})`;
+          } else if(item.classList.contains('project-card')) {
+            content = item.querySelector('h3')?.textContent;
+          } else if(item.classList.contains('achievement')) {
+            content = item.querySelector('h3')?.textContent;
+          } else if(item.classList.contains('testimonial')) {
+            content = item.querySelector('.author')?.textContent;
+          } else if(item.classList.contains('education-item')) {
+            content = item.querySelector('h3')?.textContent;
+          }
+          console.log(`  ✓ ${content}`);
+        });
+      } else {
+        const text = section.textContent.substring(0, 80);
+        console.log(`  ℹ ${text}...`);
+      }
     });
+    
+    console.log(`\n%c========================================`, 'color: #38bdf8; font-size: 12px;');
+    console.log('%c✨ Content fully loaded and animated!', 'color: #f97316; font-weight: bold;');
   };
 
   displayContent();
