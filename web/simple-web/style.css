@@ -70,22 +70,3 @@ body[data-theme="light"] .link-card{color:#042033}
 
 /* Accessibility: focus styles */
 a:focus,button:focus{outline:3px solid rgba(255,255,255,0.18);outline-offset:3px}
-
-@media (max-width:760px){
-  .nav-list{display:none;flex-direction:column;gap:0}
-  .menu-toggle{display:block}
-  .header-inner{gap:0.5rem}
-  .container{padding:0.75rem}
-}
-
-/* Light theme when data-theme="light" on body */
-body[data-theme="light"]{background:linear-gradient(135deg,#fbe8ff,#ecfeff);color:#06202b}
-body[data-theme="light"] .card{background:rgba(255,255,255,0.9);box-shadow:0 8px 30px rgba(2,6,23,0.06)}
-body[data-theme="light"] .chip{color:#042033}
-body[data-theme="light"] .link-card{color:#042033}
-
-/* small polish */
-.name{background:linear-gradient(90deg,var(--accent1),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* Accessibility: focus styles */
-a:focus,button:focus{outline:3px solid rgba(255,255,255,0.12);outline-offset:3px}
