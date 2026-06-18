@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Johnson — Student Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Alex Johnson</h1>
+        <p class="tag">Undergraduate — Computer Science</p>
+      </div>
+      <nav class="nav" id="nav">
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#subjects">Favorite Subjects</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card about">
+      <h2>School</h2>
+      <p><strong>University of Modern Learning</strong></p>
+      <p>B.S. Computer Science — expected 2027</p>
+      <p>GPA: 3.8 • Dean's List</p>
+    </section>
+
+    <section id="hobbies" class="card grid">
+      <h2>Hobbies & Activities</h2>
+      <div class="grid-cards">
+        <div class="item">🎸 Music & Guitar Club</div>
+        <div class="item">🤝 Volunteer Tutoring</div>
+        <div class="item">🏃‍♂️ Running & Fitness</div>
+        <div class="item">🎮 Game Jams</div>
+      </div>
+    </section>
+
+    <section id="subjects" class="card">
+      <h2>Favorite Subjects</h2>
+      <div class="chips">
+        <span class="chip">Algorithms</span>
+        <span class="chip">Web Development</span>
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Human-Computer Interaction</span>
+      </div>
+    </section>
+
+    <section id="links" class="card links">
+      <h2>Links</h2>
+      <div class="links-row">
+        <a class="link-card" href="https://github.com/" target="_blank" rel="noopener">GitHub →</a>
+        <a class="link-card" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn →</a>
+        <a class="link-card" href="mailto:alex.johnson@example.com">Email →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with ♥ for modern, responsive design.</p>
+      <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+    </div>
+  </footer>
+</body>
+</html>
